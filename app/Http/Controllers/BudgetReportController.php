@@ -24,17 +24,20 @@ class BudgetReportController extends Controller
     public function index() {
         date_default_timezone_set('asia/Karachi');
         $format = 'Y/m/d';
-        $now = date($format);
-        $to = date($format, strtotime("+30 days"));
+//        $from = date($format);
+        $from = date($format, strtotime("-400 days"));
+        $to = date($format, strtotime("+400 days"));
         $constraints = [
-            'from' => $now,
+            'from' => $from,
             'to' => $to
         ];
+        
         $grantModel= new \App\GrantHead();
+        $grantModel->from=$from;
+        $grantModel->to=$to;
         $grant=new \App\Grant();
         $grants = $grant->with(["main"])->get();
-        $grantHeadModel=new \App\GrantHead();
-        return view('budget-management/report/index', ['grants' => $grants, 'searchingVals' => $constraints,"grantHeadModel"=>$grantHeadModel]);
+        return view('budget-management/report/index', ['grants' => $grants, 'searchingVals' => $constraints,"grantHead"=>$grantModel]);
     }
 
     public function exportExcel(Request $request) {

@@ -111,8 +111,7 @@ $(document).on("submit","#editForm",(e)=>{
         newEntry.find('#grant_id').val(item.id).prop("selected",true);
         controlForm.find('tr:not(:last) .buttons .btn-add')
             .removeClass('btn-add').addClass('btn-remove')
-            .find(".fa-plus").removeClass("fa-plus").addClass("fa-remove"); 
-    
+            .find(".fa-plus").removeClass("fa-plus").addClass("fa-remove");
                });
                
            }

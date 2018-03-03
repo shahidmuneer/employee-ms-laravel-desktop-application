@@ -44,8 +44,7 @@
                                      <option value="1">Original Budget Grant</option>
                                      <option value="2">Re-Appro Sup Grant</option>
                                      <option value="3">Modified Grant</option>
-                                     <option value="4">Original Budget Grant</option>
-                                     <option value="5">Expense</option>
+                                     <option value="4">Expense</option>
                                 </select>
                             </div>
                         </div>
